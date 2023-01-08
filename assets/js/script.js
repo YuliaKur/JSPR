@@ -65,12 +65,13 @@
 // };
 
 
+
+
+
+
                                     // МАСИВЫ. Методы
 
 // массив не является отдельным типом данных, они основаны на обьектах
-
-
-
 
     // Длина массива
 
@@ -936,10 +937,6 @@
 //           Оператор возвращает строку, содержащую тип ('number', 'string' , 'object' ). 
 //           Для null оператор возвращает 'object' (это признанная ошибка языка)
 
-// const isChecked = true,
-//       isClose = true;
-
-// console.log(isChecked && isClose);
 
 
 // ПРАКТИКА
@@ -966,29 +963,129 @@
 
 
 
-// УСЛОВИЯ
-
-// if(4 == 4) {    условие если 
-//     console.log('Ок!');
-// } else {
-//     console.log('Error');
-// }
 
 
 
-// const num = 50;
-
-// if (num < 49) {
-//     console.log('Error');
-// } else if (num > 100) {
-//     console.log('Много');
-// } else {
-//     console.log('Ok!');
-// }
 
 
-// Тернарный оператор
-// (num === 50) ? console.log('Ok!') : console.log('Error');
+                        // УСЛОВИЯ
+
+    // Если условие в круглых скобках if (2 > 1) true то код будет выполнятся
+    // Есл false то код выполняется не будет
+
+                // let messege = 'Привет';
+
+                // if (2 > 1) {                   Код выполниться только если выражение в скобках вернет true
+                //     console.log(messege);      2 > 1 это true и код выведет в консоль Привет
+                // }  
+                
+                
+                // let messege = 'Привет';
+                // let first = 5;
+                // let second = 10;
+
+                // if (first === second) {
+                //     console.log(messege);  в консоль ничего не выведет так как выражение false
+                // }
+
+
+                // let messege = 'Привет';
+
+                // if ( 2 + 1 === 3 && "1" == 1 || 10 > 5 && 10 === 1) { 
+                //     console.log(messege); консоль: Привет
+                // }
+
+            // Более короткая запись
+            //     let messege = 'Привет';
+
+            //     if (2 > 1) console.log(messege);
+
+
+
+                // let messege = 'Привет';
+                // let number = 5;
+
+                // if (number > 1) {
+                //     console.log(messege);
+                // } else {
+                //     console.log('Условие не выполнено!');
+                // }
+
+    // Чтобы проверить несколько условий мы можем использовать блок if else 
+
+                // let messege = 'Привет';
+                // let number = 5;
+                // if (number > 50) {
+                //     console.log('5 больше 50');
+                // } else if (number > 30) {
+                //     console.log('5 больше 30');
+                // } else if (number > 10) {
+                //     console.log('5 больше 10');
+                // } else if (number > 1) {
+                //     console.log('5 больше 1');  консоль: 5 больше 1
+                // } else {
+                //     console.log('Условие не выполнено!');
+                // }
+
+    // Тернарный оператор
+        // Условный оператор вопросительный знак ?
+
+        // (num === 50) ? console.log('Ok!') : console.log('Error');
+            // Класическая запись кода
+                // let message = 'Привет';
+                // let messageEnd;
+
+                // if (5 > 1) {
+                //     messageEnd = ", Вася!";
+                // } else {
+                //     messageEnd = ", Оля!";
+                // }
+
+                // message += messageEnd;
+                // console.log(message);   консоль: Привет, Вася!
+                
+            // код переписан с помощью оператора ?
+                
+                // let message = 'Привет';
+                // let messageEnd = (5 > 1) ? ", Вася!" : ", Оля!";  ( : ) двоеточие заменяет else
+
+                // message += messageEnd;
+                // console.log(message);   консоль: Привет, Вася!
+
+
+            // Более сложная запись кода
+
+                // let message = 'Привет';
+                // let messageEnd;
+
+                // if (5 > 50) {
+                //     messageEnd = ", Вася!";
+                // } else if (5 > 30) {
+                //     messageEnd = ", Оля!";
+                // } else if (5 > 10) {
+                //     messageEnd = ", Миша!";
+                // } else if (5 > 1) {
+                //     messageEnd = ", Андрей!";
+                // } else {
+                //     messageEnd = ", Коля!";
+                // }
+
+                // message += messageEnd;
+                // console.log(message);   консоль: Привет, Андрей!
+
+            // Упрощенная запись
+
+                // let message = 'Привет';
+                // let messageEnd = 5 > 10 ? ", Вася!" :
+                //     5 > 30 ? ", Оля!" :
+                //         5 > 10 ? ", Миша!" :
+                //             5 > 1 ? ", Андрей!" :
+                //             ", Коля!";
+
+                // message += messageEnd;
+                // console.log(message);   консоль: Привет, Андрей!
+
+
 
 
 // const num = 50;
@@ -1014,7 +1111,8 @@
 
 
 
-// ЛОГИЧЕСКИЕ ОПЕРАТОРЫ
+                        // ЛОГИЧЕСКИЕ ОПЕРАТОРЫ
+
 
 
 // const hamburger = 3;
