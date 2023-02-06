@@ -243,6 +243,19 @@
                 //  let arrTwo = arrOne.slice();
                 // console.log(arrTwo);
 
+                // const oldArray = ['a', ['b'], ['c']];
+                // const newArray = oldArray.slice();
+
+                // newArray[1] = 'sdggdhdhhdhf';
+                // console.log(newArray);    [ 'a', 'sdggdhdhhdhf', [ 'c' ] ]
+                // console.log(oldArray);    [ 'a', [ 'b' ], [ 'c' ] ]
+
+
+
+
+
+
+
 // concat() - возвращает новый массив, состоящий из массива, на котором он был вызван, соединённого 
                     //с другими массивами и/или значениями, переданными в качестве аргументов
                 // let arrOne = ['Ваня', 'Коля', 'Оля',]
@@ -363,9 +376,9 @@
 //           записывается в новый массив, который и возвращается наружу.
             // вызывает функцию для каждого элемента массива и возвращает массив результатов выполнения этой функции
         //         let arrTwo = ['Ваня', 'Коля', 'Оля',]; 
-        // let result = arr.  map((function(item, index, array) {   item сам элемет массива, index ключ или позиция массива
-        //         return item[0];                                  array это весь масив
-        //     });  
+        // let result = arr.map((function(item, index, array) {   //item сам элемет массива, index ключ или позиция массива
+        //         return item[0];                                  //array это весь масив
+        //     });
 
         //     или
 
@@ -434,22 +447,36 @@
     // цикл FOR...OF
     //                 можно  использовать для вывода значений
 
-    //                 let arr = ['Ваня, Коля, Оля',];
+                    // let arr = ['Ваня, Коля, Оля',];
             
-    //                        for (let arrItem of arr) {              let arrItem переменная которая будет содержать в себе каждое значение массива
-    //                     console.log(arrItem);               консоль выведет Ваня Коля Оля 
-    //                 }
+                    //        for (let arrItem of arr) {            //  let arrItem переменная которая будет содержать в себе каждое значение массива
+                    //     console.log(arrItem);           //    консоль выведет Ваня Коля Оля 
+                    // }
 
     // forEach - выполняет функцию для каждого элемента массива
 
                     // let arr = ['Ваня', 'Коля', 'Оля',];
 
                     // arr.forEach(function (item, index, array) {                                 
-                    //     console.log(`${item} находиться на ${index} позиции в ${index}`);   item сам элемет массива, index ключ или позиция массива, array это весь масив
+                    //     console.log(`${item} находиться на ${index} позиции в ${index}`);   item сам элемет массива, index ключ или позиция массива, array это весь массив
                     //                                                                         консоль выведет: Ваня находиться на 0 позиции в 0
                     //                                                                         Коля находиться на 1 позиции в 1
                     //                                                                         Оля находиться на 2 позиции в 2
                     // });
+
+
+
+                    // const arr = [2, 3, 6, 8, 10];
+
+                    // arr.forEach(function(item, i, arr) {
+                    //     console.log(`${i}: ${item} внутри массива ${arr}`);
+                    // });  консоль 0: 2 внутри массива 2,3,6,8,10
+                    //              1: 3 внутри массива 2,3,6,8,10
+                    //              2: 6 внутри массива 2,3,6,8,10
+                    //              3: 8 внутри массива 2,3,6,8,10
+                    //              4: 10 внутри массива 2,3,6,8,10
+
+
 
         // тоже самое можно записать в стрелочную функцию   
 
@@ -679,7 +706,7 @@
         // console.log(`Результа деления: ${x}`);
 
         // Взятие остатка от деления %
-        // х = 11 % 3;
+        // х = 11 typeof3;
         // console.log(`Результа взятие остатка от деления: ${x}`);
         // Проверка: 11=3 *3 (неполное частичное от деления) + 2(остаток)
 
@@ -1089,6 +1116,57 @@
         // ответ будет 'true'
         //           Оператор возвращает строку, содержащую тип ('number', 'string' , 'object' ). 
         //           Для null оператор возвращает 'object' (это признанная ошибка языка)
+
+
+    // Оператр Spread 
+
+    //     Spread syntax позволяет расширить доступные для итерации элементы (например, массивы или строки) в местах
+
+    //         для функций: где ожидаемое количество аргументов для вызовов функций
+    //               равно нулю или больше нуля
+    //         для элементов (литералов массива)
+    //         для выражений объектов: в местах, где количество пар "ключ-значение"
+    //               должно быть равно нулю или больше (для объектных литералов)
+
+        // Для массивов
+
+                // const video = ['youtube', 'vimeo', 'rutube'],
+                //       blogs = ['wordpress', 'livegornal', 'blogger'],
+                //       internet = [...blogs, ...video, 'vk', 'facebook'];
+                //       console.log(internet);[
+                //                                 'wordpress',
+                //                                 'livegornal',
+                //                                 'blogger',
+                //                                 'youtube',
+                //                                 'vimeo',
+                //                                 'rutube',
+                //                                 'vk',
+                //                                 'facebook'
+                //                             ]
+
+
+
+                    // function log(a, b, c) {
+                    //     console.log(a);
+                    //     console.log(b);
+                    //     console.log(c);
+                    // }
+
+                    // const num = [2, 5, 7];
+                    // log(...num);    2
+                    //                 5
+                    //                 7
+
+        // Для обьектов
+
+                // const a = {
+                //     one: 1,
+                //     two: 2,
+                // };
+                // const newObj = {...a};
+                // console.log(a);     { one: 1, two: 2 }
+
+
 
 
 
@@ -1837,6 +1915,9 @@
 
         // Функции-колбэки
 
+                // если функции в коде идут одна за другой это не значить что они также будут срабатывать
+                    // они запускаються одна за одной но результат могут отдать в разное время
+
                     // function calcSumm(numOne, numTwo, more, less) {
                     //     let numSumm = numOne + numTwo;
 
@@ -2174,7 +2255,7 @@ P.S.S. Это классическая функция-модификатор, к
 
                     // в JS встроенный обьект Math, который содержит несколько функций для работы с округлением
                     
-                    // Math.floor - округление в меншую строну
+                    // Math.typeof - округление в меншую строну
 
                         // let numOne = Math.floor(5.8);
                         // let numTwo = Math.floor(2.2);
@@ -2510,6 +2591,30 @@ P.S.S. Это классическая функция-модификатор, к
 
             // console.log('Привет' > 'привет'); консоль: false
 
+    Метод trim() -  удаляет пробельные символы с начала и конца строки. Пробельными символами в этом контексте
+                    считаются все собственно пробельные символы (пробел, табуляция, неразрывный пробел и прочие)
+                    и все символы конца строки (LF, CR и прочие).
+
+                function rememberMyFilms() {
+                    for (let i = 0; i < 2; i++) {
+                        const a = prompt('Один из последних просмотренных фильмов?', '').trim,  
+                              b = prompt('На сколько оцените его?', '');
+
+                        if (a != null && b != null && a != '' && b != '' && a.length < 50 && b.length < 50) {
+                                personalMovieDB.movies[a] = b;
+                                console.log('done');
+                        } else {
+                              console.log('arror');
+                              i--;
+                        }
+                    }
+                }
+
+                rememberMyFilms();
+
+
+
+
 
 
 
@@ -2529,88 +2634,1415 @@ genres
 P.S. Функции вызывать не обязательно*/
 
 
+// 'use strict';
+
+// let numberOfFilms;
+
+// function star() {
+//     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+//     while (numberOfFilms == ' ' || numberOfFilms == null || isNaN(numberOfFilms)) {
+//         numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+//     }
+// }
+
+// star();
+
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false
+// };
+
+// function rememberMyFilms() {
+//     for (let i = 0; i < 2; i++) {
+//         const a = prompt('Один из последних просмотренных фильмов?', '').trim,  
+//               b = prompt('На сколько оцените его?', '');
+        
+//         if (a != null && b != null && a != '' && b != '' && a.length < 50 && b.length < 50) {
+//                 personalMovieDB.movies[a] = b;
+//                 console.log('done');
+//         } else {
+//               console.log('arror');
+//               i--;
+//         }
+//     }
+// }
+
+// rememberMyFilms();
+
+// function detectPersonalLevel() {
+//     if (personalMovieDB.count < 10) {
+//       console.log('Просмотрено довольно мало фильмов');
+//     } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//       console.log('Вы классический зритель!');
+//     } else if (personalMovieDB.count >= 30) {
+//       console.log('Вы киноман))))');
+//     } else {
+//       console.log('Произошла ошибка');
+//     }
+// }
+
+// detectPersonalLevel();
+
+// function showMyDB(hidden) {   hidden - скрытый , также можно обозвать и по другому
+//     if(!hidden) {
+//         console.log(personalMovieDB);
+//     }
+// }
+
+// showMyDB(personalMovieDB.privat);
+
+// function writeYourGenres() {
+//     for (let i = 1; i <= 3; i++) {
+//         const a = prompt(`Ваш любимый жанр под номером ${i}`);
+
+//         personalMovieDB.genres[i - 1] = a;
+//     }
+// }
+
+// writeYourGenres();
+
+
+
+
+
+      
+// Задачи:
+
+// 1) Создайте функцию, которая будет вычислять объем и площадь полной поверхности куба 
+// (тоже базовая математика, иногда используется в создании анимаций). Эта функция принимает в себя целое
+//  число со значением длины ребра куба. Ответ выведите в формате строки, который изображен в примерах.
+
+// Если в функцию попал неправильный аргумент или вычислить значения невозможно - вернуть строку 
+// "При вычислении произошла ошибка"
+
+// Примеры:
+
+// calculateVolumeAndArea(5)  => 'Объем куба: 125, площадь всей поверхности: 150'
+
+// calculateVolumeAndArea(15)  => 'Объем куба: 3375, площадь всей поверхности: 1350'
+
+// calculateVolumeAndArea(15.5)  => 'При вычислении произошла ошибка'
+
+// calculateVolumeAndArea('15')  => 'При вычислении произошла ошибка'
+
+// calculateVolumeAndArea(-15)  => 'При вычислении произошла ошибка'
+
+
+// function calculateVolumeAndArea (length) {
+//     if (typeof(length) !== 'number' || length < 0 || !typeof(length)) {
+//        console.log('При вычислении произошла ошибка');
+//        return;
+//     }
+
+//  let cubeVolume = 0,
+//      cubeArea = 0;
+
+//     cubeVolume = length * length * length;
+//     cubeArea = 6 *  (length *length);
+
+//     console.log(`Объем куба: ${cubeVolume}, площадь всей поверхности:${cubeArea}`);
+// }
+
+// calculateVolumeAndArea('5');
+
+
+
+
+
+
+// 2) Напишите функцию, которая будет определять номер купе по переданному ей номеру места.
+
+// Функция принимает только целое число от 1 до 36.
+
+// Если переданный аргумент не число, отрицательное или дробное - возвращается сообщение:
+
+// "Ошибка. Проверьте правильность введенного номера места"
+
+// Если число 0 или больше 36, то сообщение: "Таких мест в вагоне не существует"
+
+// Пример:
+
+// getCoupeNumber(33)  => 9
+
+// getCoupeNumber(7)  => 2
+
+// getCoupeNumber(300)  => "Таких мест в вагоне не существует"
+
+// getCoupeNumber(0)  => "Таких мест в вагоне не существует"
+
+// getCoupeNumber(7.7)  => "Ошибка. Проверьте правильность введенного номера места"
+
+// getCoupeNumber(-10)  => "Ошибка. Проверьте правильность введенного номера места"
+
+// getCoupeNumber('Hello')  => "Ошибка. Проверьте правильность введенного номера места"
+
+// Такая функция вполне реальна и может использоваться для формирования билетов, в том числе и визуально на сайтах. 
+// Конечно, там будет куда больше условий, но смысл остается таким ж
+
+
+
+
+// function getCoupeNumber(placeNumber) {
+//     if (typeof(placeNumber) !== 'number' || placeNumber < 0 || !Number.isInteger(placeNumber)) {
+//         console.log('Ошибка. Проверьте правильность введенного номера места');
+//         return;
+//     } 
+//     if (placeNumber === 0 || placeNumber > 36) {
+//         console.log('Таких мест в вагоне не существует');
+//         return;
+//     } 
+//     if (placeNumber === 1 || placeNumber <= 36) {
+//         console.log(Math.ceil(placeNumber / 4));
+//         return;
+//     }
+// }
+
+// getCoupeNumber (25);
+
+
+
+
+
+// Задачи:
+
+// 1) Создайте функцию, которая принимает в себя целое число минут и возвращает время в нужном формате строки. 
+// (Смотри пример). Обратите внимание на окончание слова "час" - оно меняется в зависимости от цифры. 
+// Если вместо аргумента приходит не число, дробное или отрицательное число - 
+// функция возвращает строку "Ошибка, проверьте данные"
+
+// Внимание! Давайте пока ограничимся максимум 600ю минутами (10 часов). Так как проверки на большие числа будут 
+// раздувать код (33 часа, 31 час, 11 часов и тд). Этого будет достаточно и код будет проверять 
+// именно этот промежуток (1 - 10 часов). Но вы можете реализовать и полный скрипт, он тоже должен проходить тесты.
+
+// Пример:
+
+// getTimeFromMinutes(150) => "Это 2 часа и 30 минут"
+
+// getTimeFromMinutes(50) => "Это 0 часов и 50 минут"
+
+// getTimeFromMinutes(0) => "Это 0 часов и 0 минут"
+
+// getTimeFromMinutes(-150) => "Ошибка, проверьте данные"
+
+
+
+        // function getTimeFromMinutes(numberOfMinutes) {
+        //     if(typeof(numberOfMinutes) !== 'number' || numberOfMinutes < 0 || !Number.isInteger(numberOfMinutes)) {
+        //         console.log('Ошибка, проверьте данные');
+        //         return 'Ошибка, проверьте данные';
+        //     }
+        
+        // let hours = Number.parseInt(numberOfMinutes / 60);
+        // let minutes = numberOfMinutes % 60;
+        
+        // let strHours = '';
+
+        // if(hours === 0){
+        //     strHours = 'часов';
+        // }else if(hours === 1){
+        //     strHours = 'час';
+        // }else if(hours === 2 || hours === 3 || hours === 4){
+        //     strHours = 'часа';
+        // }else{
+        //     strHours = 'часов'; 
+        // }
+        // console.log(`Это ${hours} ${strHours} и ${minutes} минут`);
+        // return `Это ${hours} ${strHours} и ${minutes} минут`;
+        // }
+
+        // getTimeFromMinutes(81);
+
+
+        
+
+        // function getTimeFromMinutes(minutesTotal) {
+        //     if (typeof(minutesTotal) !== 'number' || minutesTotal < 0 || !Number.isInteger(minutesTotal)) {
+
+        //         return "Ошибка, проверьте данные";
+        //     }
+        
+        //     const hours = Math.floor(minutesTotal / 60);
+        //     const minutes = minutesTotal % 60;
+        
+        //     let hoursStr = '';
+        
+        //     switch (hours) {
+        //         case 0: 
+        //             hoursStr = 'часов';
+        //             break;
+        //         case 1:
+        //             hoursStr = 'час';
+        //             break;
+        //         case 2:
+        //         case 3:
+        //         case 4:
+        //             hoursStr = 'часа';
+        //             break;
+        //         default:
+        //             hoursStr = 'часов';
+        //     }
+        //             return `Это ${hours} ${hoursStr} и ${minutes} минут`;
+        // }
+        // console.log(getTimeFromMinutes(150) === 'Это 2 часа и 30 минут');
+        // getTimeFromMinutes(81);
+
+
+// 2) Напишите функцию, которая принимает в себя 4 числа и возвращает самое большее из них. Если один из аргументов не 
+// является числом или их меньше 4 - возвращается 0. Дробные числа разрешены.
+
+// Пример:
+
+// findMaxNumber(1, 5, 6.6, 11); =>  11
+
+// findMaxNumber(1, 5, '6', '10');  =>  0
+
+
+// function findMaxNumber(numOne, numTwo, numThree, numFour) {
+//     if (typeof(numOne) !== 'number' || typeof(numTwo) !== 'number' || typeof(numThree) !== 'number' || typeof(numFour) !== 'number') {
+//         // console.log(0);
+//         return 0;
+//     } else {
+//         // console.log(Math.max(numOne, numTwo, numThree, numFour));
+//         return Math.max(numOne, numTwo, numThree, numFour);
+//     }
+// }
+
+//     findMaxNumber(2, 5.5, 4, 78);
+//     findMaxNumber(2, '5.5', 4, 78);
+//     findMaxNumber(2, 5.5, 4);
+
+
+
+// Задача:
+
+// Создайте функцию, которая будет принимать в себя один аргумент-целое положительное число. Она должна возвращать строку, 
+// в которой будут через пробел выведены числа Фибоначчи. Причем, их количество должно быть равно переданному аргументу.
+
+// Если переданный аргумент не число - вернуть пустую строку. Решать без применения рекурсии.
+
+// Пример:
+
+// fib(4) => ''0 1 1 2"
+
+// fib(7) => ''0 1 1 2 3 5 8"
+
+// fib('7') => ''"
+
+// fib(1) => "0"
+
+// fib(0) => ''"
+
+
+
+// function fib(numFibo) {
+//     if (typeof(numFibo) !== 'number' || numFibo <= 0 || !Number.isInteger(numFibo)) {
+//         return "";
+//     }
+
+//     let resultFibo = '';
+//     let nextNum = 0;
+//     let prevNum = 1;
+
+//     for (let i = 0; i < numFibo; i++) {
+//         if (i + 1 === numFibo) {
+//             resultFibo += `${nextNum}`;
+//         } else {
+//             resultFibo += `${nextNum} `;
+//         }
+
+//         let resNum = nextNum + prevNum;
+//         nextNum = prevNum;
+//         prevNum = resNum;
+//     }
+
+//     return resultFibo;
+// }
+// console.log(fib(5));
+
+// fib(5);
+
+
+
+// const fib = n => {
+//     let prev = 0, next = 1;
+//     for(let i = 0; i < n; i++){
+//       let temp = next;
+//       next = prev + next;
+//       prev = temp;
+//     }
+//     return prev;
+//   };
+
+
+
+
+// function fibonacci(n) {
+//     if(typeof n !== 'number' || n < 0) {
+//       return 'Error';
+//     }
+//     else if(n <= 1) {
+//       return n;
+//     }
+//     else {
+//       return fibonacci(n - 1) + fibonacci(n - 2);
+//     }
+//   }
+  
+//   console.log(fibonacci(6));
+
+
+//   Как вывести последовательность чисел Фибоначчи используя рекурсию
+//   function fibi(total, i0, i1, index) { 
+//     if (! i0) {
+//       i0 = 1;
+//       index = 1;
+//     } else if (! i1) {
+//       i1 = 1;
+//       index = 2;
+//     } else {
+//       [i0, i1] = [i0 + i1, i0];
+//       index++;
+//     }
+  
+//     console.log(i0);
+//     if (index < total) return fibi(total, i0, i1, index);
+//   }
+
+//   fibi(5);
+
+
+// вывод числел по порядку
+// function numberOutput(n) {
+//     return n ? numberOutput(n - 1) + n.toString() : "";
+//   }
+//   console.log(numberOutput(9));
+
+
+// function fib(numFibo) {
+// let a = 1;
+// let b = 1;
+// for(let i = 3; i <= numFibo; i++){
+//     let c = a + b;
+//     a = b;
+//     b = c;
+
+//     // или короткая запись
+
+//     // [a, b] = [b, a + b];
+// }
+
+// return b;
+// }
+
+// console.log(fib(10));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    // ОБЬЕКТЫ
+
+            // let userInfo = new Object(); синтаксис  'конструктор обьекта'
+            // let userInfo = {};  синтаксис 'литерал обьекта'
+
+    // Свойства обьекта
+
+                // let userInfo = {
+                    // name: 'Вася',    ключ (интедефикатор или имя свойства обьекта) name значение Вася
+                    // age: 30,         последняя (висячая) запятая
+                // };
+                // 
+                // console.log(userInfo);
+                // console.log(userInfo.name)
+
+
+    // Имена (ключи) свойств объектов
+
+                // let userInfo = {
+                    // name: 'Вася',
+                    // age: 30,
+                    // 'likes javascript': true,
+                // };
+                // console.log(userInfo.name);      консоль Вася
+                // console.log(userInfo['name']);   консоль Вася
+                // console.log(userInfo['likes javascript']); консоль true
+
+        // вычисляем имя свойства
+
+                // let firstPart = 'likes';
+                // let userInfo = {
+                    // name: 'Вася',
+                    // age: 30,
+                    // [firstPart + ' javascript']: true,
+                // };
+                // console.log(userInfo['likes javascript']);  консоль true
+
+        // передаем имя свойства
+
+                // let firstPart = 'likes';
+                // let userInfo = {
+                    // name: 'Вася',
+                    // age: 30,
+                    // [firstPart]: true,
+                // };
+                // console.log(userInfo[firstPart]);  консоль true
+
+        // преимущество квадратных скобок
+
+                // let firstPart = 'likes';
+                // let userInfo = {
+                    // name: 'Вася',
+                    // age: 30,
+                    // [firstPart]: true,
+                // };
+                // console.log(userInfo[firstPart]);  консоль true
+
+                // let key = 'name';
+                // console.log(userInfo[key]);  консоль Вася
+                // console.log(userInfo.key);  если записать через точку то мы получим undefined
+                                        //     мы не сможем получить 'Вася' такого имени в этом 
+                                        //     обьекте не существует
+
+        // Зарезервированые слова
+
+            // Имена переменных мы не можем использовать специальные
+            // зарезервированные слова типа let, for, if и тд
+            // имена свойств в нутри обьекта не поддаються этому правилу
+
+                // let firstPart = 'likes';
+                // let userInfo = {
+                //     let: 'Вася',  здесь можно указывать зарезервированные слова
+                //     for: 30         и все будет работать
+                // };
+                // console.log(userInfo.let); консоль Вася
+                // console.log(userInfo.for); консоль 30
+
+            // В качестве имени свойства может быть либо строка либо символ
+
+                // let userInfo = {
+                //     0: 'Вася',    это строка ноль
+                // };
+                // console.log(userInfo[0]);    консоль Вася
+                // console.log(userInfo['0']);  консоль Вася
+
+
+    // Тип данных Symbol
+
+        // Symbol это отдельный тип данных и предстваляет собой уникальный индетификатор
+
+            // Основное пременение символов:
+            // 1. 'Скрытые' свойства обьектов
+            //     Символьные свойства не появятся в циклах for....in
+            // 2. Использование системных символов
+            //    Symbol.iterator, Symbol.toPrimitive и тд
+
+                // let id = Symbol('id');
+                // let userInfo = {
+                //     name: 'Вася',
+                //     age: 30,
+                //     [id]: 'Какоето значение',
+                // };
+                // console.log(userInfo);    консоль { name: 'Вася', age: 30, [Symbol(id)]: 'Какоето значение' }
+
+
+    // Вложенность объектов
+
+                // let userInfo = {
+                //     name: 'Вася',
+                //     age: 30,
+                //     address:{
+                //         city: 'Kharkiv',
+                //         street: 'Myra',
+                //     } 
+                // };
+                // console.log(userInfo);      консоль { name: 'Вася', age: 30, address: { city: 'Kharkiv', street: 'Myra' } }
+                // console.log(userInfo.address); консоль { city: 'Kharkiv', street: 'Myra' }
+                // console.log(userInfo.address.city); консоль Kharkiv
+
+
+    // Значение свойств объекта из переменных
+
+                // function makeUserInfo(name, age) {
+                //     return {             функция возвращает обьект с именами свойтва
+                //         name: name,
+                //         age: age,
+                //         // другие свойства
+                //     };
+                // }
+                // let user = makeUserInfo('Вася', 30);            создаем переменную со свойствами 
+                // console.log(user);    консоль { name: 'Вася', age: 30 }    и передаем значение в функцию
+
+            // или можно записать так
+                
+                // function makeUserInfo(name, age) {
+                //     return { 
+                //         name,  // тоже самое  что name: name,
+                //         age,    //тоже самое что age: age,
+                //         'likes javascript': true,
+                //         // другие свойства
+                //     };
+                // }
+                // let user = makeUserInfo('Вася', 30);
+                // console.log(user);    консоль { name: 'Вася', age: 30, 'likes javascript': true }
+
+
+    // Изменение объекта и его свойств
+
+        // добавление свойств
+
+                // let userInfo = {
+                //     name: 'Вася',
+                // };
+                // console.log(userInfo);   консоль  { name: 'Вася' }
+                // добавляем новое значение возвраст
+                // userInfo.age = 30;
+
+                // console.log(userInfo);   консоль { name: 'Вася', age: 30 }  появляетьс ятеперь два свойства
+
+                // userInfo['likes javascript'] = true;
+
+                // console.log(userInfo);   консоль  { name: 'Вася', age: 30, 'likes javascript': true }
+
+                // userInfo.address = {     добавляем обьект внутрь обьекта
+                //     city: 'Kharkiv',
+                //     street: 'Myra',
+                // };
+                // console.log(userInfo);   консоль   {
+                //                                       name: 'Вася',
+                //                                       age: 30,
+                //                                       'likes javascript': true,
+                //                                       address: { city: 'Kharkiv', street: 'Myra' }
+                //                                     }
+
+        // удаление свойств
+
+                // let userInfo = {
+                //     name: 'Вася',
+                //     age: 30,
+                //     'likes javascript': true,
+                // };
+                // console.log(userInfo);   консоль { name: 'Вася', age: 30, 'likes javascript': true }
+
+                // delete userInfo.age;
+                // console.log(userInfo);   консоль { name: 'Вася', 'likes javascript': true }
+
+                // delete userInfo['likes javascript'];
+                // console.log(userInfo);   консоль { name: 'Вася' }
+
+        // Изменение значения в каком нибудь свойстве
+
+                // let userInfo = {
+                //     name: 'Вася',
+                //     age: 30,
+                // };
+                // console.log(userInfo);  консоль { name: 'Вася', age: 30 }
+
+                // userInfo.age = 18;
+                // console.log(userInfo);  консоль { name: 'Вася', age: 18 }
+
+            // изменять значение имени свойства можно даже в константе
+
+                // const userInfo = {
+                //     name: 'Вася', 
+                //     age: 30,
+                // };
+                // console.log(userInfo);  консоль { name: 'Вася', age: 30 }
+
+                // userInfo.age = 18;
+                // console.log(userInfo);  консоль { name: 'Вася', age: 18 }
+
+        // Копировние обьектов
+
+            // При копировании обьекта в другую переменную сам обьект
+            // не дублируется, а копируется только ссылка на него
+
+                // let userInfo = {
+                //     name: 'Вася',
+                //     age: 30,
+                // };
+                // console.log(userInfo);  консоль { name: 'Вася', age: 30 }
+
+                // let user = userInfo;
+                // console.log(user);      консоль { name: 'Вася', age: 30 }
+
+                // user.age = 18;
+                // console.log(userInfo);  консоль { name: 'Вася', age: 18 }
+
+
+                    // const obj = {
+                    //     a: 5,
+                    //     b: 1,
+                    // };
+
+                    // const copy = obj; происходит передача значения по ссылке тоесть идет ссылка на obj
+
+                    // copy.a = 10; изменяя что-то в copy мы изменяем изначальгный обьект
+
+                    // console.log(copy);   { a: 10, b: 1 }
+                    // console.log(obj);    { a: 10, b: 1 }
+
+            // с примитивными типами данных  типа строки, числа логические значения они передаються по значению
+            // когда работаем с обьектами то передача идет по ссылке
+
+
+                    // function copy(mainObj) {
+                    //     let objCopy = {};
+                    //     let key;
+                    //     for (key in mainObj) {
+                    //         objCopy[key] = mainObj[key];
+                    //     }
+                    //     return objCopy;
+                    // }
+
+                    // const numbers = {
+                    //     a: 2, 
+                    //     b: 5,
+                    //     c: {
+                    //         x: 7,
+                    //         y: 4,
+                    //     }
+                    // };
+                    // const newNumbers = copy(numbers);
+
+                    // newNumbers.a = 10;
+                    // console.log(newNumbers);  // { a: 10, b: 5, c: { x: 7, y: 4 } }
+                    // console.log(numbers);    { a: 2, b: 5, c: { x: 7, y: 4 } }
+
+
+
+
+        // Дублирование обьекта
+
+            // для дублирования обьекта удобно использовать (Object.assign)
+            // Object.assign(куда(обьект), что(свойство№1), что(свойство№2),...);
+
+                // let userInfo = {
+                //     name: 'Вася',
+                //     age: 30,
+                // };
+
+                // let user = Object.assign({}, userInfo); создаем новыю переменную дальше Object.assign 
+                //                                         в нем создаем новый пустой обьект {} и дальше 
+                //                                         указываем откуда будем копировать userInfo
+                // // user.age = 18;    в новом значении user меняем одно из значений age
+
+                // console.log(userInfo); консоль { name: 'Вася', age: 30 } тут значения не поменялись
+                // console.log(user);     консоль { name: 'Вася', age: 18 } в новом обьекте значения поменялись
+
+            // также с помощью Object.assign можем добавлять новые свойства в обьект
+
+                // let userInfo = {
+                //     name: 'Вася',
+                //     age: 30,
+                // };
+
+                // Object.assign(userInfo, {['likes javascript']: true, city: 'Kharkiv'});
+                // console.log(userInfo); консоль { name: 'Вася', age: 30, 'likes javascript': true, city: 'Kharkiv' }
+
+
+    // Проверка существования свойства объекта
+
+                // let userInfo = {
+                //     name: 'Вася',
+                //     //age: 30,
+                // };
+                // console.log(userInfo.age); //консоль 30
+                // console.log(userInfo.age); если убрать одно из свойств (например age)то получим undefined
+                // проверка свойства
+                // if(userInfo.age) {      если будет  undefined то вернется false
+                    // console.log(userInfo.age);  если значние будет существовать то вернется true
+                // }                                и мы выведем его в консоль
+                // 
+
+        // Опциональная цепочка еще один из методов проверки
+
+            // Опциональная цепочка ?. — это безопасный способ доступа к свойствам вложенных объектов, 
+                                    // даже если какое-либо из промежуточных свойств не существует.
+
+            // Опциональная цепочка ?. останавливает вычисление и возвращает undefined,
+            //  если значение перед ?. равно undefined или null.
+
+                // let userInfo = {
+                //     name: 'Вася',
+                //     age: 30,
+                //     address: {     
+                //         city: 'Kharkiv',
+                //         street: 'Myra',  
+                //     }
+                // };
+                // console.log(userInfo.address.street); У большинства наших пользователей есть адреса в свойстве user.address
+                // или console.log(userInfo['address']['street']);    с улицей user.address.street, но некоторые из них их не указали.
+                                                    // В таком случае, когда мы попытаемся получить user.address.street, 
+                                                    // а пользователь окажется без адреса, мы получим ошибку:
+                                                    // В таком случае, когда мы попытаемся получить user.address.street, 
+                                                    // а пользователь окажется без адреса, мы получим ошибку:
+                // console.log(userInfo?.address?.street);  пользователь без адреса но мы получаем undefined (без ошибки)
+             
+        // Оператор in
+
+                // Когда свойство существует, но содержит значение undefined то следует использовать 'in'
+
+                // let userInfo = {
+                //         name: undefined,
+
+                // };
+                // if(userInfo.name) {   //такая запись (  name: undefined,) вернет false
+                //     console.log(userInfo.name);
+                // }
+
+                // if('name' in userInfo) {  // при такой проверки значение сработает и вернет true
+                //     console.log(userInfo.name); консоль undefined
+                // }
+
+    // Цикл for in
+
+        // производит обход объектов. Обход перечисляемых свойств объекта осуществляется в произвольном порядке.
+
+        // Для for...of обход происходит в соответствии с тем, какой порядок определён в итерируемом объекте
+
+
+            // for (let a in object) { let а - переменная которая содержит имена свойств object это обьект
+                // тело цикла, выполняется для каждого свойства обьекта
+            // }
+
+                // let userInfo = {
+                //     name: 'Вася',
+                //     age: 30,
+                //     address: {     
+                //         city: 'Kharkiv',
+                //         street: 'Myra',  
+                //     }
+                // };
+                // for (let key in userInfo) {
+                //     // ключи
+                //     console.log(key); консоль name, age, address
+                //     // значение ключей
+                //     console.log(userInfo[key]); консоль Вася, 30, Object{}
+                // }
+
+                // for (let key in userInfo.address) {
+                //     // ключи
+                //     console.log(key);  консоль city, street
+                //     // значение ключей
+                //     console.log(userInfo[key]); консоль Kharkiv, Myra
+                // }
+
+                // const option = {
+                //     name: 'test',
+                //     with: 1024,
+                //     height: 60,
+                //     colors: {
+                //         border: 'black',
+                //         bg: 'red',
+                //     }
+                // };
+
+                // for (let key in option) {
+                //     if (typeof(option[key]) === 'object') {
+                //         for (let i in option[key]) {
+                //             console.log(`Свойство ${i} имеет значение ${option[key][i]}`);
+                //         }
+                //     } else {
+                //         console.log(`Свойство ${key} имеет значение ${option[key]}`);
+                //     }
+                // }
+
+
+    // Методы объектов. Использование "this"
+
+                // let userInfo = {
+                    // name: 'Вася',
+                    // age: 30,
+                    // address: {     
+                        // city: 'Kharkiv',
+                        // street: 'Myra',  
+                    // },
+                    // showInfo: function() {
+                        // console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес: г.${userInfo.address.city}, улица ${userInfo.address.street}.`);
+                    // }
+                    // 
+                // более короткая запись
+                    // showInfo() {
+                        // console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес: г.${userInfo.address.city}, улица ${userInfo.address.street}.`);
+                    // }
+                // };
+                // userInfo.showInfo();
+
+            // использрование this
+
+
+
+                // let userInfo = {
+                //     name: 'Вася',
+                //     age: 30,
+                //     address: {     
+                //         city: 'Kharkiv',
+                //         street: 'Myra',  
+                //     },
+                //     showInfo() { с такой записью функции this не будет работать, будет ошибка
+                //         // console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес: г.${userInfo.address.city}, улица ${userInfo.address.street}.`);
+                //         
+                // а со стрелочной функцией будет работать так как нет вложеностей и this обращается к родительский обьект let userInfo = {,,,,,,
+                //          вместо userInfo мы пишем просто this это будет предпологать текущий обьект
+                //         console.log(`${this.name}, ${this.age} лет. Адрес: г.${this.address.city}, улица ${this.address.street}.`);
+                //     }
+                // };
+                // userInfo.showInfo();
+
+
+
+                // let userInfo = {
+                //     name: 'Вася',
+                //     age: 30,
+                //     address: {     
+                //         city: 'Kharkiv',
+                //         street: 'Myra',  
+                //     },
+                //     showInfo() {
+                    // function show() {
+                    //     console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес: г.${userInfo.address.city}, улица ${userInfo.address.street}.`);
+                    // }
+                    // у стрелочной функции нет своего "this" используется значение
+                    // из фвнешнего метода userInfo.userInfo()
+                    // let show = () => console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес: 
+                    // г.${userInfo.address.city}, 
+                    // улица ${userInfo.address.street}.`);
+                //     show();
+                //     }
+                // };
+                // userInfo.showInfo();
+
+            // Использование this намного надежнее чем использование имени переменной
+
+                // let userInfo = {
+                //     name: 'Вася',
+                //     age: 30,
+                //     address: {     
+                //         city: 'Kharkiv',
+                //         street: 'Myra',  
+                //     },
+                //     showInfo() {
+                //         console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес: г.${userInfo.address.city}, улица ${userInfo.address.street}.`);
+                //     }
+                // };
+                // userInfo.showInfo();
+
+                // let user = userInfo; передаем значение в новую переменную
+                // userInfo = null;     старую переменную обнуляем 
+                // user.showInfo();     тогда в консоли когда попытаемся вызвать новую переменную будет ошибка
+                //         но еслибы была выше запись вместо userInfo поставили this
+                //         showInfo() {
+                //             console.log(`${this.name}, ${this.age} лет. Адрес: г.${this.address.city}, улица ${this.address.street}.`);
+                //         } 
+                //         };
+                //         userInfo.showInfo();
+                //         let user = userInfo;
+                //         user.showInfo(); 
+                //         user.showInfo();  то здесь бы уже ошибки небыло и работало потомучто нет 
+                //                           привязки к конкретному обьекту
+
+
+        // метод keys() -  возвращает массив из собственных перечисляемых свойств переданного объекта, в том же порядке,
+                        //  в котором они бы обходились циклом for...in (разница между циклом и методом в том, что цикл 
+                            // перечисляет свойства и из цепочки прототипов)
+
+                // const option = {
+                //     name: 'test',
+                //     with: 1024,
+                //     height: 60,
+                //     colors: {
+                //         border: 'black',
+                //         bg: 'red',
+                //     }
+                // };
+
+                // console.log(Object.keys(option));  консоль [ 'name', 'with', 'height', 'colors' ]
+                // console.log(Object.keys(option).length);  консоль 4  количество элементов в массиве   
+
+               
+        // Содание метода самостоятельно
+
+                // const option = {
+                //     name: 'test',
+                //     with: 1024,
+                //     height: 60,
+                //     colors: {
+                //         border: 'black',
+                //         bg: 'red',
+                //     },
+                //     makeTest: function() {  создали метод 
+                //         console.log('Nest');
+                //     }
+                // };
+
+                // option.makeTest();
+
+    // Функции-конструкторы
+
+            // Обычный синтаксис создания обьекта{...} позволяет создать только один обьект.обьект
+            // Но зачастую нам нужно создать множество однотипных обьектов, таких пользователи, элементы меню и тогда
+            // это можно сделать при помощи функции - конструктора и оператора 'new'
+
+            // Функции-конструкторы являються обычными функциями
+            // но есть два правила:
+            // 1. Имя функции конструктора должно начинаться с большой буквы
+            // 2. Функции-конструктор должна вызываться при помощиоператора 'new'
+
+                    // function UserInfo(name) {
+                        //сначало
+                         //this = {}; создается пустой обьект (неявно)
+                    
+                        // this.name = name;
+                        // this.age = 30;
+                        //потом будет автомтически возвращать в return
+                        //return this; возвращает обьект не явно
+                        
+                        // return можно писать и возвращать то что надо а не автомвтически
+                    // }
+                    // console.log(new UserInfo('Вася'));
+                    // console.log(new UserInfo('Лена'));
+
+
+
+
+
+
+
+//Задачи:
+// 1) Напишите функцию showExperience, которая будет принимать в себя объект со
+//  всеми данными и возвращать строку с опытом.
+
+// Пример:
+
+// showExperience(personalPlanPeter) => '1 month'
+
+// P.S. желательно использовать деструктуризацию, но не обязательно
+
+
+// const personalPlanPeter = {
+//     name: "Peter",
+//     age: "29",
+//     skills: {
+//         languages: ['ru', 'eng'],
+//         programmingLangs: {
+//             js: '20%',
+//             php: '10%'
+//         },
+//         exp: '1 month'
+//     }
+// };
+
+// function showExperience(plan) {
+
+//    const {exp} = plan.skills; 
+//    console.log(exp);
+//     return exp;
+// }
+
+// showExperience(personalPlanPeter);
+
+
+
+// 2) Напишите функцию showProgrammingLangs, которая будет принимать в себя объект со 
+// всеми данными и возвращать строку в нужном виде.
+
+// Пример:
+
+// showProgrammingLangs(personalPlanPeter)  =>
+
+// "Язык js изучен на 20% Язык php изучен на 10%"
+
+// Причем функция должна работать вне зависимости от количества языков. Если ни 
+// один не указан, то возвращается пустая строка.
+
+// P.S. Для переноса строки используется \n в конце строки.
+
+
+
+// function showProgrammingLangs(plan) {
+
+//     let str = '';
+//     const {programmingLangs} = plan.skills;
+//     for (let key in programmingLangs) {
+//         str += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
+//     }
+// console.log(str);
+// return str;
+
+// }
+
+// showProgrammingLangs(personalPlanPeter);
+
+
+
+
+
+// 3) Создайте метод showAgeAndLangs внутри объекта personalPlanPeter. При его вызове
+//  метод будет принимать в себя объект и возвращать строку в нужном виде.
+
+// Пример:
+
+//     personalPlanPeter.showAgeAndLangs(personalPlanPeter)
+
+// => 'Мне 29 и я владею языками: RU ENG'
+
+// Заметьте, что возраст и языки подставляются автоматически из объекта, а языки всегда в
+//  верхнем регистре (большими буквами). Если данные в объекте поменяются, то и сообщение
+//   тоже измени
+
+// const personalPlanPeter = {
+//     name: "Peter",
+//     age: "29",
+//     skills: {
+//         languages: ['ru', 'eng'],
+//         programmingLangs: {
+//             js: '20%',
+//             php: '10%'
+//         },
+//         exp: '1 month'
+//     }
+// // третье решение нужно вставить сюда
+
+// showAgeAndLangs: function(plan) {
+//     const {age} = plan;
+//     const {languages} = plan.skills;
+//     let str = `Мне ${age} и я владею языками: `;
+
+//     languages.forEach(function(lang) {
+//         str += `${lang.toUpperCase()} `;
+//     });
+
+//     return str;
+// }
+// };
+
+// personalPlanPeter.showAgeAndLangs(personalPlanPeter);
+
+
+
+
+// Задачи:
+
+// 1) Напишите функцию showFamily, которая будет принимать в себя массив строк и
+//  возвращать сообщение в нужном формате.
+
+// showFamily(family)  => 'Семья состоит из: Peter Ann Alex Linda'
+
+// Имена подставляются автоматически из массива. Если массив пустой, то выводится 
+// сообщение 'Семья пуста'
+
+
+// const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+
+// function showFamily(arr) {
+
+//     let str = ' ';
+       
+//       if(arr.length === 0) {
+//           str = `Семья пуста `;
+//       } else {
+//           str = `Семья состоит из:  `;
+//       
+//             или
+//       arr.length === 0 ? str = 'Семья пуста' : str = 'Семья состоит из: ';
+
+//       arr.forEach(function(num) {
+//           str += `${num} `;
+//       });
+//     // return str;
+//     console.log(str);
+
+// }
+
+// showFamily(family);
+
+// 2) напишите функцию standardizeStrings, которая будет принимать в себя массив строк и будет выводить в консоль
+//  эти строки в нижнем регистре.
+
+// Пример:
+
+// standardizeStrings(favoriteCities)  выведет в консоль
+
+//     lisbon
+//     rome
+//     milan
+//     dublin
+
+// Это частая задача в реальности, так как от пользователя нам могут прийти ответы в самых разных форматах. В том числе
+//  и с разными буквами :) Поэтому нам нужно привести строки в один формат для правильной работы.
+
+
+
+
+// const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+// function standardizeStrings(arr) {
+//     arr.forEach(function(str) {
+//         console.log(str.toLowerCase());
+//     });
+
+//     //или
+
+//     // arr.forEach(str => {
+//     //     console.log(str.toLowerCase());
+
+//     // });
+
+// }
+
+// standardizeStrings(favoriteCities);
+
+
+
+// 3) Задача с собеседований. Напишите функцию reverse, которая принимает в себя строку и возвращает эту строку
+//  в обратном порядке.
+
+// Пример:
+
+//     const someString = 'This is some strange string';
+
+// reverse(someString) => 'gnirts egnarts emos si sihT'
+
+// Функцию можно применить к любой строке. Если в функцию приходит не строка - вернуть сообщение "Ошибка!"
+
+// Это очень интересная задача, которую можно решить несколькими способами. Её дают для того, чтобы оценить навык
+//  и знания программиста, посмотреть как он думает. Как небольшая подсказка, есть метод, который может вам помочь. 
+//  И часть дополнительных вариантов решения мы тоже изучим в течении курса.
+
+// Может показать сложной с первого взгляда, но это совсем не так 🙂
+
+// const someString = 'This is some strange string';
+
+// function reverse(str) {
+
+//     if (typeof(str) !== 'string') {
+//         // return 'Ошибка!';
+//         console.log('Ошибка!');
+//     } else{
+//         // return str.split('').reverse().join('');
+//         console.log(str.split('').reverse().join(''));
+//     }
+
+//     // или
+
+//      // let newStr = '';
+//     // for (let i = str.length - 1; i >= 0; i--) {
+//     //     newStr += str[i];
+//     // }
+//     // return newStr;
+// }
+
+// reverse(someString);
+
+
+
+
+
+
+// 4) Представьте такую реальную ситуацию. У вас есть банкомат, который выдает деньги из двух разных банков в разных
+//  валютах. Один банк основной с базовыми валютами, второй дополнительный с прочими валютами:
+
+//     const baseCurrencies = ['USD', 'EUR'];
+//     const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+
+// Вам нужно создать главную функцию банкомата availableCurr, которая принимает два аргумента: первый - это массив со
+//  всеми доступными валютами из двух банков сразу (сейчас представим, что они не могут повторяться), второй - необязательный
+//   аргумент, который указывает ту валюту, которая сейчас закончилась в банкомате. Если массив в первом аргументе пустой - то
+//    функция возвращает строку 'Нет доступных валют'. Функция возвращает строку в нужном виде.
+
+// Пример:
+
+//     availableCurr(['UAH', 'RUB', 'CNY'], 'CNY')
+
+// Вернет строку:
+
+//     Доступные валюты:
+//     UAH
+//     RUB
+
+// Заметьте:
+
+// - CNY (юань) исчез из списка валют, значит такая валюта закончилась
+
+// - После валюты: стоит перенос строки \n, и после каждой валюты тоже. Это важно для тестов
+
+// - Данные для первого аргумента должны приходить сразу из двух банков, причем сначала baseCurrencies, 
+// потом additionalCurrencies по порядку
+
+// const baseCurrencies = ['USD', 'EUR'];
+// const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+
+// function availableCurr(arr, missingCurr) {
+
+//     let str = '';
+
+//     arr.length === 0 ? str = 'Нет доступных валют.' : str = 'Валюты в наличии:\n';
+
+//       arr.forEach(function(a, b) {
+//        if(a !== missingCurr){
+//             str += `${a}\n`;
+//        }
+//     });
+
+//      // или
+
+//     // for (let i = 0; i < arr.length; i++) {
+//     //     if (arr[i] === missingCurr) {
+//     //         continue;
+//     //     }
+//     //     str += `${arr[i]}\n`;
+//     // }
+
+//     // return str;
+//     console.log(str);
+// }
+
+// availableCurr([...baseCurrencies, ...additionalCurrencies], 'CNY');
+
+
+
+
+
+
+/* Задание на урок:
+
+1) У нас уже есть рабочее приложение, состоящее из отдельных функций. Представьте, что
+перед вами стоит задача переписать его так, чтобы все функции стали методами объекта personalMovieDB
+Такое случается в реальных продуктах при смене технологий или подхода к архитектуре программы
+
+2) Создать метод toggleVisibleMyDB, который при вызове будет проверять свойство privat. Если оно false - он
+переключает его в true, если true - переключает в false. Протестировать вместе с showMyDB.
+
+3) В методе writeYourGenres запретить пользователю нажать кнопку "отмена" или оставлять пустую строку. 
+Если он это сделал - возвращать его к этому же вопросу. После того, как все жанры введены - 
+при помощи метода forEach вывести в консоль сообщения в таком виде:
+"Любимый жанр #(номер по порядку, начиная с 1) - это (название из массива)"*/
+
 'use strict';
 
-let numberOfFilms;
-
-function star() {
-    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-
-    while (numberOfFilms == ' ' || numberOfFilms == null || isNaN(numberOfFilms)) {
-        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-    }
-}
-
-star();
-
 const personalMovieDB = {
-    count: numberOfFilms,
+    count: 0,
     movies: {},
     actors: {},
     genres: [],
-    privat: false
+    privat: false,
+    star: function () {
+        this.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+        while (this.count == ' ' || this.count == null || isNaN(this.count)) {
+            this.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
+        }
+    },
+
+    rememberMyFilms: function () {
+        for (let i = 0; i < 2; i++) {
+            const a = prompt('Один из последних просмотренных фильмов?', '').trim,  
+                  b = prompt('На сколько оцените его?', '');
+            
+            if (a != null && b != null && a != '' && b != '' && a.length < 50 && b.length < 50) {
+                    this.movies[a] = b;
+                    console.log('done');
+            } else {
+                  console.log('arror');
+                  i--;
+            }
+        }
+    },
+
+    detectPersonalLevel: function () {
+        if (this.count < 10) {
+          console.log('Просмотрено довольно мало фильмов');
+        } else if (this.count >= 10 && this.count < 30) {
+          console.log('Вы классический зритель!');
+        } else if (this.count >= 30) {
+          console.log('Вы киноман))))');
+        } else {
+          console.log('Произошла ошибка');
+        }
+    },
+
+    showMyDB: function (hidden) {   //hidden - скрытый , также можно обозвать и по другому
+        if(!hidden) {
+            console.log(personalMovieDB);
+        }
+    },
+
+    
+    toggleVisibleMyDB: function(){
+        if(this.privat){
+            this.privat = false;
+        } else{
+            this.privat = true;
+        }
+    },
+    
+    writeYourGenres: function () {
+        for (let i = 1; i <= 3; i++) {
+            const a = prompt(`Ваш любимый жанр под номером ${i}`);
+        // Проверка на пустое поле для ввода ИЛИ на кнопку Отмена
+            if(a === '' || a == null){
+                console.log('Вы ввели некорректные данные или не ввели их вовсе');
+                i--;
+            }
+            else{
+                personalMovieDB.genres[i - 1] = a;
+            }
+        }
+        // Вывод любимых жанров №... - Метод forEach
+        this.genres.forEach((item, i) => {
+            console.log(`Любимый жанр ${i + 1} - это ${item}`);
+        });
+    },
 };
 
-function rememberMyFilms() {
-    for (let i = 0; i < 2; i++) {
-        const a = prompt('Один из последних просмотренных фильмов?', ''),
-              b = prompt('На сколько оцените его?', '');
-        
-        if (a != null && b != null && a != '' && b != '' && a.length < 50 && b.length < 50) {
-                personalMovieDB.movies[a] = b;
-                console.log('done');
-        } else {
-              console.log('arror');
-              i--;
-        }
-    }
-}
 
-rememberMyFilms();
 
-function detectPersonalLevel() {
-    if (personalMovieDB.count < 10) {
-      console.log('Просмотрено довольно мало фильмов');
-    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-      console.log('Вы классический зритель!');
-    } else if (personalMovieDB.count >= 30) {
-      console.log('Вы киноман))))');
-    } else {
-      console.log('Произошла ошибка');
-    }
-}
 
-detectPersonalLevel();
 
-function showMyDB(hidden) {   hidden - скрытый , также можно обозвать и по другому
-    if(!hidden) {
-        console.log(personalMovieDB);
-    }
-}
 
-showMyDB(personalMovieDB.privat);
 
-function writeYourGenres() {
-    for (let i = 1; i <= 3; i++) {
-        const a = prompt(`Ваш любимый жанр под номером ${i}`);
 
-        personalMovieDB.genres[i - 1] = a;
-    }
-}
 
-writeYourGenres();
-      
 
 
 
+// Задача:
 
+// У вас есть небольшой кусочек данных о торговом центре, которые записаны в объекте shoppingMallData. 
+// Они содержат массив с данными о магазинах, где указана длина и ширина помещения; высоту помещения;
+//  стоимость отопления за 1 кубический метр и бюджет на оплату отопления за месяц.
 
+// Основная задача - это написать функцию isBudgetEnough, которая буде возвращать строку. Если бюджета
+//  хватает для отопления всего объема торгового центра - выводится 'Бюджета достаточно', если 
+//  нет - 'Бюджета недостаточно'. И все 🙂
 
+// Но эта задача содержит несколько подзадач внутри:
 
+// - вычисление общей площади всех магазинов, которая вычисляется как длина магазина, умноженная на его ширину;
 
+// - вычисление общего объема торгового центра, так как цена отопления указана в кубических метрах;
 
+// - определение того, хватает ли бюджета на оплату такого объема;
 
+// - все числа идут без единиц измерения для упрощения, просто цифры и все;
 
+// - функция должна продолжать работать, даже если изменяется количество магазинов, высота, бюджет или
+//  подставляется вообще другой объект.
 
 
 
@@ -2624,76 +4056,49 @@ writeYourGenres();
 
 
 
+// Задача:
 
+// У вас есть список учеников, которые хотят поиграть в игру:
 
+//     const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
 
+// Но команд может быть только 3 по 3 человека. Напишите функцию sortStudentsByGroups, 
+// которая принимает в себя массив строк.
 
+// Внутри она сначала сортирует имена по алфавиту. Затем распределяет учеников по 3 человека
+//  в 3 группы по алфавитному порядку. Эти группы должны быть массивами. Как итог, функция 
+//  возвращает новый массив с тремя командами и строкой как 4й элемент.
 
+// Пример:
 
+// sortStudentsByGroups(students)  =>
 
+//     [
+//       [ 'Andrew', 'Ann', 'Bernard' ],
+//       [ 'Cris', 'Josh', 'Mark' ],
+//       [ 'Peter', 'Sam', 'Sandra' ],
+//       'Оставшиеся студенты: Takesi'
+//     ]
 
+// Если убрать одно студента из списка, то результат будет:
 
+//     [
+//       [ 'Andrew', 'Ann', 'Bernard' ],
+//       [ 'Cris', 'Josh', 'Mark' ],
+//       [ 'Peter', 'Sam', 'Sandra' ],
+//       'Оставшиеся студенты: -'
+//     ]
 
+// А если добавить одного, то:
 
+//     [
+//       [ 'Andrew', 'Ann', 'Bernard' ],
+//       [ 'Cris', 'Josh', 'Mark' ],
+//       [ 'Peter', 'Sam', 'Sandra' ],
+//       'Оставшиеся студенты: Takesi, Somebody'
+//     ]
 
+// То есть, меняется содержимое строки. Все оставшиеся ученики попадают туда.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Task 1
-// При нажатии (click) на .b-1 запускайте f1, которая выводите в .out-1 число 1.
-
-
-// function f1() {
-//     document.querySelector('.out-1').textContent = +1;    
-// }
-
-// document.querySelector('.b-1').onclick = f1;
-
-
-
-// стрелочная функция
-
-// document.querySelector('.b-1').onclick = () => {
-
-//     document.querySelector('.out-1').value = '1';
-//     console.log(document.querySelector('.out-1').value = '1');
-
-
-//     let a = document.querySelector('.out-1');   
-//     console.log(a.value);
-//     a.value = '1';
-//  };
-
-
-
-//  function f1 () {
-//     // при нажатии на .b-1 ты вызываешь функцию f1
-//     document.querySelector('.b-1').onclick = f1;
-//     console.log(document.querySelector('.b-1').onclick = f1);
-
-//    let a = document.querySelector('.out-1');   
-//     console.log(a.value);
-//     a.value = '1';
-    
-//         // сокращенная запись
-//     document.querySelector('.out-1').value = '1';
-//     console.log(document.querySelector('.out-1').value = '1');
-
-//  }
-
-//  f1();
-
+// Задача интересная, немного заковыристая, но все необходимое для неё мы уже проходили. 
+// Просто распишите логику действий строка за строкой.
